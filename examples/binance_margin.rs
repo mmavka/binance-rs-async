@@ -2,6 +2,7 @@
 extern crate tracing;
 
 use env_logger::Builder;
+use binance_rs_async::margin::Margin;
 
 #[tokio::main]
 async fn main() {
@@ -15,11 +16,11 @@ async fn main() {
 
 #[cfg(feature = "margin_api")]
 async fn margin_query() {
-    use binance::api::*;
-    use binance::bool_to_string_some;
-    use binance::config::Config;
-    use binance::margin::Margin;
-    use binance::rest_model::*;
+    use binance_rs_async::api::*;
+    use binance_rs_async::bool_to_string_some;
+    use binance_rs_async::config::Config;
+    use binance_rs_async::margin::Margin;
+    use binance_rs_async::rest_model::*;
     use chrono::{Duration, Utc};
     use std::ops::Sub;
 
@@ -155,10 +156,10 @@ async fn margin_query() {
 #[allow(dead_code)]
 #[cfg(feature = "margin_api")]
 async fn margin_post() {
-    use binance::api::*;
-    use binance::config::Config;
-    use binance::margin::Margin;
-    use binance::rest_model::*;
+    use binance_rs_async::api::*;
+    use binance_rs_async::config::Config;
+    use binance_rs_async::margin::Margin;
+    use binance_rs_async::rest_model::*;
 
     eprintln!("----------- Margin POST queries ----------");
     let margin: Margin = Binance::new_with_env(&Config::testnet());

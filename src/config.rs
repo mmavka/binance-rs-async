@@ -19,7 +19,7 @@ impl Config {
     /// Configure binance with all testnet endpoints
     /// # Examples
     /// ```
-    /// use binance::config::Config;
+    /// use binance_rs_async::config::Config;
     /// let config = Config::testnet();
     /// ```
     pub fn testnet() -> Config {
@@ -41,7 +41,7 @@ impl Config {
     /// # Examples
     ///
     /// ```
-    /// use binance::config::Config;
+    /// use binance_rs_async::config::Config;
     /// let config = Config::default();
     /// config.set_rest_api_endpoint("http://myendpoint:8080");
     /// ```
@@ -61,7 +61,7 @@ impl Config {
     /// # Examples
     ///
     /// ```
-    /// use binance::config::Config;
+    /// use binance_rs_async::config::Config;
     /// let config = Config::default();
     /// config.set_ws_endpoint("ws://myendpoint:8080");
     /// ```
@@ -81,7 +81,7 @@ impl Config {
     /// # Examples
     ///
     /// ```
-    /// use binance::config::Config;
+    /// use binance_rs_async::config::Config;
     /// let config = Config::default();
     /// config.set_futures_rest_api_endpoint("http://myendpoint:8080");
     /// ```
@@ -101,7 +101,7 @@ impl Config {
     /// # Examples
     ///
     /// ```
-    /// use binance::config::Config;
+    /// use binance_rs_async::config::Config;
     /// let config = Config::default();
     /// config.set_futures_ws_endpoint("ws://myendpoint:8080");
     /// ```
@@ -122,7 +122,7 @@ impl Config {
     /// # Examples
     ///
     /// ```
-    /// use binance::config::Config;
+    /// use binance_rs_async::config::Config;
     /// let config = Config::default();
     /// config.set_recv_window(300);
     /// ```
@@ -142,7 +142,7 @@ impl Config {
     /// # Examples
     ///
     /// ```
-    /// use binance::config::Config;
+    /// use binance_rs_async::config::Config;
     /// let config = Config::default();
     /// config.set_timeout(3);
     /// ```
@@ -156,7 +156,7 @@ impl Default for Config {
     /// Configure binance with default production endpoints
     /// # Examples
     /// ```
-    /// use binance::config::Config;
+    /// use binance_rs_async::config::Config;
     /// let config = Config::default();
     /// ```
     fn default() -> Config {

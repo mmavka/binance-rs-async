@@ -46,7 +46,7 @@ impl Margin {
     /// Execute transfer between spot account and margin account.
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let transaction_id = tokio_test::block_on(margin.transfer("BTCUSDT", 0.001, MarginTransferType::FromMainToMargin));
     /// assert!(transaction_id.is_ok(), "{:?}", transaction_id);
@@ -69,7 +69,7 @@ impl Margin {
     /// Execute transfer between spot account and isolated margin account.
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let transaction_id = tokio_test::block_on(margin.isolated_transfer("BTC", "BTC", 0.001, IsolatedMarginTransferType::Spot, IsolatedMarginTransferType::IsolatedMargin));
     /// assert!(transaction_id.is_ok(), "{:?}", transaction_id);
@@ -101,7 +101,7 @@ impl Margin {
     /// Apply for a loan.
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let transaction_id = tokio_test::block_on(margin.loan("BTCUSDT", 0.001));
     /// assert!(transaction_id.is_ok(), "{:?}", transaction_id);
@@ -117,7 +117,7 @@ impl Margin {
     /// Apply for an isolated loan.
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let transaction_id = tokio_test::block_on(margin.loan_with_isolation("BTCUSDT", 0.001, Some(true), Some("BNB".to_string())));
     /// assert!(transaction_id.is_ok(), "{:?}", transaction_id);
@@ -146,7 +146,7 @@ impl Margin {
 
     /// Repay loan for margin account.
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let transaction_id = tokio_test::block_on(margin.repay("BTCUSDT", 0.001));
     /// assert!(transaction_id.is_ok(), "{:?}", transaction_id);
@@ -162,7 +162,7 @@ impl Margin {
     /// Apply for an isolated loan.
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let transaction_id = tokio_test::block_on(margin.repay_with_isolation("BTCUSDT", 0.001, Some(true), Some("BNB".to_string())));
     /// assert!(transaction_id.is_ok(), "{:?}", transaction_id);
@@ -192,7 +192,7 @@ impl Margin {
     /// Post a new order for margin account.
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let margin_order = MarginOrder {
     ///     symbol: "BTCUSDT".to_string(),
@@ -221,7 +221,7 @@ impl Margin {
     /// Post a new order for margin account.
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let margin_order = MarginOrder {
     ///     symbol: "BTCUSDT".to_string(),
@@ -248,7 +248,7 @@ impl Margin {
     /// Post a new order for margin account.
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let margin_order = MarginOCOOrder {
     ///     symbol: "BTCUSDT".to_string(),
@@ -270,7 +270,7 @@ impl Margin {
     /// Cancel an existing order
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let result = tokio_test::block_on(margin.cancel_trade("BTCUSDT", 1_u64, "my_id".to_string(), "my_next_id".to_string(), None));
     /// assert!(result.is_ok(), "{:?}", result);
@@ -302,7 +302,7 @@ impl Margin {
     /// Cancel an existing order
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let result = tokio_test::block_on(margin.cancel_oco_order("BTCUSDT", 1_u64, "my_id".to_string(), "my_next_id".to_string(), None));
     /// assert!(result.is_ok(), "{:?}", result);
@@ -334,7 +334,7 @@ impl Margin {
     /// Cancel all existing orders for a symbol
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let result = tokio_test::block_on(margin.cancel_all_orders("BTCUSDT", None));
     /// assert!(result.is_ok(), "{:?}", result);
@@ -359,7 +359,7 @@ impl Margin {
     /// Get existing loan records
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let loan_query = RecordsQuery {
     ///    asset: "BTC".to_string(),
@@ -378,7 +378,7 @@ impl Margin {
     /// Get existing repay records history
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let records_query = RecordsQuery {
     ///    asset: "BTC".to_string(),
@@ -397,7 +397,7 @@ impl Margin {
     /// Get margin account details
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let account_details = tokio_test::block_on(margin.details());
     /// assert!(account_details.is_ok(), "{:?}", account_details);
@@ -412,7 +412,7 @@ impl Margin {
     /// Get isolated margin account details
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let account_details = tokio_test::block_on(margin.isolated_details(None));
     /// assert!(account_details.is_ok(), "{:?}", account_details);
@@ -427,7 +427,7 @@ impl Margin {
     /// Disable isolated margin account
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let account_details = tokio_test::block_on(margin.disable_isolated("BTCUSDT".to_string()));
     /// assert!(account_details.is_ok(), "{:?}", account_details);
@@ -442,7 +442,7 @@ impl Margin {
     /// Enable isolated margin account
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let account_details = tokio_test::block_on(margin.enable_isolated("BTCUSDT".to_string()));
     /// assert!(account_details.is_ok(), "{:?}", account_details);
@@ -457,7 +457,7 @@ impl Margin {
     /// Get margin pair market data
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let pair_details = tokio_test::block_on(margin.isolated_pair("BTCUSDT"));
     /// assert!(pair_details.is_ok(), "{:?}", pair_details);
@@ -478,7 +478,7 @@ impl Margin {
     /// Get all isolated pair details
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let all_pairs = tokio_test::block_on(margin.all_pairs());
     /// assert!(all_pairs.is_ok(), "{:?}", all_pairs);
@@ -493,7 +493,7 @@ impl Margin {
     /// Toggle BNB Burn on Spot Trade and Margin Interest
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let all_pairs = tokio_test::block_on(margin.toggle_bnb_burn(BnbBurnQuery::default()));
     /// assert!(all_pairs.is_ok(), "{:?}", all_pairs);
@@ -507,7 +507,7 @@ impl Margin {
     /// Query BNB Burn on Spot Trade and Margin Interest
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let all_pairs = tokio_test::block_on(margin.bnb_burn_status());
     /// assert!(all_pairs.is_ok(), "{:?}", all_pairs);
@@ -520,7 +520,7 @@ impl Margin {
     /// Query Interest rate history
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let all_pairs = tokio_test::block_on(margin.interest_rate_history(InterestRateHistoryQuery::default()));
     /// assert!(all_pairs.is_ok(), "{:?}", all_pairs);
@@ -534,7 +534,7 @@ impl Margin {
     /// Get asset details
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let asset_detail = tokio_test::block_on(margin.asset("BTC"));
     /// assert!(asset_detail.is_ok(), "{:?}", asset_detail);
@@ -555,7 +555,7 @@ impl Margin {
     /// Get margin pair market data
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let pair_details = tokio_test::block_on(margin.pair("BTCUSDT"));
     /// assert!(pair_details.is_ok(), "{:?}", pair_details);
@@ -576,7 +576,7 @@ impl Margin {
     /// Get all assets details
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let all_assets = tokio_test::block_on(margin.all_assets());
     /// assert!(all_assets.is_ok(), "{:?}", all_assets);
@@ -591,7 +591,7 @@ impl Margin {
     /// Get all pair details
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let all_pairs = tokio_test::block_on(margin.all_pairs());
     /// assert!(all_pairs.is_ok(), "{:?}", all_pairs);
@@ -606,7 +606,7 @@ impl Margin {
     /// Get price index
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let price_index = tokio_test::block_on(margin.price_index("BTCUSDT"));
     /// assert!(price_index.is_ok(), "{:?}", price_index);
@@ -627,7 +627,7 @@ impl Margin {
     /// Get transfer history
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let records_query = RecordsQuery {
     ///    asset: "BTC".to_string(),
@@ -646,7 +646,7 @@ impl Margin {
     /// Get isolated transfer history
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let records_query = IsolatedTransfersQuery {
     ///    symbol: "BTC".to_string(),
@@ -671,7 +671,7 @@ impl Margin {
     /// Get interest history
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let records_query = RecordsQuery {
     ///    asset: "BTC".to_string(),
@@ -690,7 +690,7 @@ impl Margin {
     /// Get forced liquidation history
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let records_query = RecordsQuery {
     ///    asset: "BTC".to_string(),
@@ -716,7 +716,7 @@ impl Margin {
     /// Get an existing order state
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let records_query = MarginOrderQuery {
     ///     symbol: "BTCUSDT".to_string(),
@@ -736,7 +736,7 @@ impl Margin {
     /// Get open orders
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let order_state = tokio_test::block_on(margin.open_orders("BTCUSDT", None));
     /// assert!(order_state.is_ok(), "{:?}", order_state);
@@ -760,7 +760,7 @@ impl Margin {
     /// Get all orders
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let records_query = MarginOrdersQuery {
     ///    symbol: "BTCUSDT".to_string(),
@@ -778,7 +778,7 @@ impl Margin {
     /// Get all trades
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let records_query = MarginOwnTradesQuery {
     ///    symbol: "BTCUSDT".to_string(),
@@ -796,7 +796,7 @@ impl Margin {
     /// Get an existing oco order state
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let records_query = MarginOCOOrderQuery {
     ///     symbol: Some("BTCUSDT".to_string()),
@@ -814,7 +814,7 @@ impl Margin {
     /// Query all OCO Orders
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let records_query = OCORecordsQuery {
     ///     symbol: Some("BTCUSDT".to_string()),
@@ -832,7 +832,7 @@ impl Margin {
     /// Query open OCO Orders
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let records_query = MarginPairQuery {
     ///     symbol: "BTCUSDT".to_string(),
@@ -850,7 +850,7 @@ impl Margin {
     /// Get max borrowable
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let max = tokio_test::block_on(margin.max_borrowable("BTC", None));
     /// assert!(max.is_ok(), "{:?}", max);
@@ -874,7 +874,7 @@ impl Margin {
     /// Get max transferable
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*, rest_model::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let max = tokio_test::block_on(margin.max_transferable("BTC", None));
     /// assert!(max.is_ok(), "{:?}", max);
@@ -898,7 +898,7 @@ impl Margin {
     /// Start user data stream
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let start = tokio_test::block_on(margin.start());
     /// assert!(start.is_ok(), "{:?}", start);
@@ -909,7 +909,7 @@ impl Margin {
     /// Keep the connection alive
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let start = tokio_test::block_on(margin.start());
     /// assert!(start.is_ok(), "{:?}", start);
@@ -923,7 +923,7 @@ impl Margin {
     /// Close the user stream
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let start = tokio_test::block_on(margin.start());
     /// assert!(start.is_ok(), "{:?}", start);
@@ -937,7 +937,7 @@ impl Margin {
     /// Start user data stream
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let start = tokio_test::block_on(margin.start());
     /// assert!(start.is_ok(), "{:?}", start);
@@ -950,7 +950,7 @@ impl Margin {
     /// Keep the connection alive
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let start = tokio_test::block_on(margin.start());
     /// assert!(start.is_ok(), "{:?}", start);
@@ -966,7 +966,7 @@ impl Margin {
     /// Close the user stream
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, margin::*, config::*};
+    /// use binance_rs_async::{api::*, margin::*, config::*};
     /// let margin: Margin = Binance::new_with_env(&Config::testnet());
     /// let start = tokio_test::block_on(margin.start());
     /// assert!(start.is_ok(), "{:?}", start);

@@ -23,9 +23,9 @@
 //!
 //! ```rust
 //! # use std::io;
-//! use binance::general::General;
-//! use binance::api::Binance;
-//! use binance::errors::Error as BinanceLibError;
+//! use binance_rs_async::general::General;
+//! use binance_rs_async::api::Binance;
+//! use binance_rs_async::errors::Error as BinanceLibError;
 //!
 //! #[tokio::main]
 //! async fn main() -> std::io::Result<()> {

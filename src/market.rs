@@ -31,7 +31,7 @@ impl Market {
     /// Order book (Default 100; max 5000)
     /// # Examples
     /// ```rust
-    /// use binance::{api::*, market::*, config::*};
+    /// use binance_rs_async::{api::*, market::*, config::*};
     /// let conf = Config::default().set_rest_api_endpoint(DATA_REST_ENDPOINT);
     /// let market: Market = Binance::new_with_env(&conf);
     /// let orderbook = tokio_test::block_on(market.get_depth("BTCUSDT".to_string()));
@@ -49,7 +49,7 @@ impl Market {
     /// Supported limits are: 5, 10, 20, 50, 100, 500, 1000, 5000
     /// # Examples
     /// ```rust
-    /// use binance::{api::*, market::*, config::*};
+    /// use binance_rs_async::{api::*, market::*, config::*};
     /// let conf = Config::default().set_rest_api_endpoint(DATA_REST_ENDPOINT);
     /// let market: Market = Binance::new_with_env(&conf);
     /// let orderbook = tokio_test::block_on(market.get_custom_depth("BTCUSDT".to_string(), 50));
@@ -69,7 +69,7 @@ impl Market {
     /// Latest price for ALL symbols.
     /// # Examples
     /// ```rust
-    /// use binance::{api::*, market::*, config::*};
+    /// use binance_rs_async::{api::*, market::*, config::*};
     /// let conf = Config::default().set_rest_api_endpoint(DATA_REST_ENDPOINT);
     /// let market: Market = Binance::new_with_env(&conf);
     /// let prices = tokio_test::block_on(market.get_all_prices());
@@ -80,7 +80,7 @@ impl Market {
     /// Latest price for ONE symbol.
     /// # Examples
     /// ```rust
-    /// use binance::{api::*, market::*, config::*};
+    /// use binance_rs_async::{api::*, market::*, config::*};
     /// let conf = Config::default().set_rest_api_endpoint(DATA_REST_ENDPOINT);
     /// let market: Market = Binance::new_with_env(&conf);
     /// let price = tokio_test::block_on(market.get_price("BTCUSDT"));
@@ -97,7 +97,7 @@ impl Market {
     /// Average price for ONE symbol.
     /// # Examples
     /// ```rust
-    /// use binance::{api::*, market::*, config::*};
+    /// use binance_rs_async::{api::*, market::*, config::*};
     /// let conf = Config::default().set_rest_api_endpoint(DATA_REST_ENDPOINT);
     /// let market: Market = Binance::new_with_env(&conf);
     /// let avg_price = tokio_test::block_on(market.get_average_price("BTCUSDT"));
@@ -115,7 +115,7 @@ impl Market {
     /// -> Best price/qty on the order book for ALL symbols.
     /// # Examples
     /// ```rust
-    /// use binance::{api::*, market::*, config::*};
+    /// use binance_rs_async::{api::*, market::*, config::*};
     /// let conf = Config::default().set_rest_api_endpoint(DATA_REST_ENDPOINT);
     /// let market: Market = Binance::new_with_env(&conf);
     /// let tickers = tokio_test::block_on(market.get_all_book_tickers());
@@ -126,7 +126,7 @@ impl Market {
     /// -> Best price/qty on the order book for ONE symbol
     /// # Examples
     /// ```rust
-    /// use binance::{api::*, market::*, config::*};
+    /// use binance_rs_async::{api::*, market::*, config::*};
     /// let conf = Config::default().set_rest_api_endpoint(DATA_REST_ENDPOINT);
     /// let market: Market = Binance::new_with_env(&conf);
     /// let tickers = tokio_test::block_on(market.get_book_ticker("BTCUSDT"));
@@ -143,7 +143,7 @@ impl Market {
     /// 24hr ticker price change statistics
     /// # Examples
     /// ```rust
-    /// use binance::{api::*, market::*, config::*};
+    /// use binance_rs_async::{api::*, market::*, config::*};
     /// let conf = Config::default().set_rest_api_endpoint(DATA_REST_ENDPOINT);
     /// let market: Market = Binance::new_with_env(&conf);
     /// let price_stats = tokio_test::block_on(market.get_24h_price_stats("BTCUSDT"));
@@ -162,7 +162,7 @@ impl Market {
     /// If from_id, start_time and end_time are omitted, the most recent trades are fetched.
     /// # Examples
     /// ```rust
-    /// use binance::{api::*, market::*, config::*};
+    /// use binance_rs_async::{api::*, market::*, config::*};
     /// let conf = Config::default().set_rest_api_endpoint(DATA_REST_ENDPOINT);
     /// let market: Market = Binance::new_with_env(&conf);
     /// let agg_trades = tokio_test::block_on(market.get_agg_trades("BNBETH", None, None, None, Some(10)));
@@ -201,7 +201,7 @@ impl Market {
     /// <https://github.com/binance-exchange/binance-official-api-docs/blob/master/rest-api.md#klinecandlestick-data>
     /// # Examples
     /// ```rust
-    /// use binance::{api::*, market::*, config::*};
+    /// use binance_rs_async::{api::*, market::*, config::*};
     /// let conf = Config::default().set_rest_api_endpoint(DATA_REST_ENDPOINT);
     /// let market: Market = Binance::new_with_env(&conf);
     /// let klines = tokio_test::block_on(market.get_klines("BTCUSDT", "1m", None, None, None));

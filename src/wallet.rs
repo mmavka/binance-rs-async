@@ -42,7 +42,7 @@ impl Wallet {
     /// Fetch system status.
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let system_status = tokio_test::block_on(wallet.system_status());
     /// assert!(system_status.is_ok(), "{:?}", system_status);
@@ -52,7 +52,7 @@ impl Wallet {
     /// Get information of coins (available for deposit and withdraw) for user.
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let records = tokio_test::block_on(wallet.all_coin_info());
     /// assert!(records.is_ok(), "{:?}", records);
@@ -70,7 +70,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let query: AccountSnapshotQuery = AccountSnapshotQuery {start_time: None, end_time: None, limit: None, account_type: AccountSnapshotType::Spot};
     /// let records = tokio_test::block_on(wallet.daily_account_snapshot(query));
@@ -86,7 +86,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let records = tokio_test::block_on(wallet.disable_fast_withdraw_switch());
     /// assert!(records.is_ok(), "{:?}", records);
@@ -105,7 +105,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let records = tokio_test::block_on(wallet.enable_fast_withdraw_switch());
     /// assert!(records.is_ok(), "{:?}", records);
@@ -124,7 +124,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let query: CoinWithdrawalQuery = CoinWithdrawalQuery::default();
     /// let records = tokio_test::block_on(wallet.withdraw(query));
@@ -140,7 +140,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let query: DepositHistoryQuery = DepositHistoryQuery::default();
     /// let records = tokio_test::block_on(wallet.deposit_history(&query));
@@ -156,7 +156,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let query: DepositHistoryQuery = DepositHistoryQuery::default();
     /// let records = tokio_test::block_on(wallet.deposit_history_quick(query, None, None));
@@ -205,7 +205,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let query: WithdrawalHistoryQuery = WithdrawalHistoryQuery::default();
     /// let records = tokio_test::block_on(wallet.withdraw_history(&query));
@@ -222,7 +222,7 @@ impl Wallet {
     /// # Examples
     /// ```rust,no_run
     /// use chrono::Duration;
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let query: WithdrawalHistoryQuery = WithdrawalHistoryQuery::default();
     /// let records = tokio_test::block_on(wallet.withdraw_history_quick(query, None, Some(Duration::weeks( 52 * 5))));
@@ -270,7 +270,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let query: DepositAddressQuery = DepositAddressQuery::default();
     /// let records = tokio_test::block_on(wallet.deposit_address(query));
@@ -289,7 +289,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let records = tokio_test::block_on(wallet.universal_transfer("BTC".to_string(), 1.0, None, None, UniversalTransferType::FundingMain));
     /// assert!(records.is_ok(), "{:?}", records);
@@ -322,7 +322,7 @@ impl Wallet {
     /// If query.start_time and query.end_time not sent, return records of the last 7 days by default
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let query: UniversalTransferHistoryQuery = UniversalTransferHistoryQuery { start_time: None, end_time: None, transfer_type: UniversalTransferType::FundingMain, current: None, from_symbol: None, to_symbol: None, size: None };
     /// let records = tokio_test::block_on(wallet.universal_transfer_history(query));
@@ -341,7 +341,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let records = tokio_test::block_on(wallet.account_status());
     /// assert!(records.is_ok(), "{:?}", records);
@@ -356,7 +356,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let records = tokio_test::block_on(wallet.api_trading_status());
     /// assert!(records.is_ok(), "{:?}", records);
@@ -375,7 +375,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let records = tokio_test::block_on(wallet.dust_log(None, None));
     /// assert!(records.is_ok(), "{:?}", records);
@@ -393,7 +393,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let records = tokio_test::block_on(wallet.convertible_assets());
     /// assert!(records.is_ok(), "{:?}", records);
@@ -410,7 +410,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let records = tokio_test::block_on(wallet.dust_transfer(vec!["BTC".to_string()]));
     /// assert!(records.is_ok(), "{:?}", records);
@@ -427,7 +427,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let records = tokio_test::block_on(wallet.asset_dividends(AssetDividendQuery::default()));
     /// assert!(records.is_ok(), "{:?}", records);
@@ -442,7 +442,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let records = tokio_test::block_on(wallet.asset_detail(None));
     /// assert!(records.is_ok(), "{:?}", records);
@@ -457,7 +457,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let records = tokio_test::block_on(wallet.trade_fees(None));
     /// assert!(records.is_ok(), "{:?}", records);
@@ -483,7 +483,7 @@ impl Wallet {
     /// Currently supports querying the following business assets：Binance Pay, Binance Card, Binance Gift Card, Stock Token
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let records = tokio_test::block_on(wallet.funding_wallet(None, None));
     /// assert!(records.is_ok(), "{:?}", records);
@@ -505,7 +505,7 @@ impl Wallet {
     ///
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, wallet::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, wallet::*, config::*, rest_model::*};
     /// let wallet: Wallet = Binance::new_with_env(&Config::testnet());
     /// let records = tokio_test::block_on(wallet.api_key_permissions());
     /// assert!(records.is_ok(), "{:?}", records);

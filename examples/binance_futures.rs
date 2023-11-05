@@ -3,6 +3,8 @@
 extern crate tracing;
 
 use env_logger::Builder;
+use binance_rs_async::futures::account::FuturesAccount;
+use binance_rs_async::futures::general::FuturesGeneral;
 
 #[tokio::main]
 async fn main() {
@@ -17,9 +19,9 @@ async fn main() {
 
 #[cfg(feature = "futures_api")]
 async fn general() {
-    use binance::api::*;
-    use binance::errors::Error as BinanceLibError;
-    use binance::futures::general::*;
+    use binance_rs_async::api::*;
+    use binance_rs_async::errors::Error as BinanceLibError;
+    use binance_rs_async::futures::general::*;
 
     let general: FuturesGeneral = Binance::new(None, None);
 
@@ -55,9 +57,9 @@ async fn general() {
 
 #[cfg(feature = "futures_api")]
 async fn market_data() {
-    use binance::api::*;
-    use binance::futures::market::*;
-    use binance::futures::rest_model::*;
+    use binance_rs_async::api::*;
+    use binance_rs_async::futures::market::*;
+    use binance_rs_async::futures::rest_model::*;
 
     let market: FuturesMarket = Binance::new(None, None);
 
@@ -119,7 +121,7 @@ async fn market_data() {
 
 #[cfg(feature = "futures_api")]
 async fn account() {
-    use binance::{api::Binance, config::Config, futures::account::FuturesAccount};
+    use binance_rs_async::{api::Binance, config::Config, futures::account::FuturesAccount};
     let api_key = Some("".into());
     let secret_key = Some("".into());
 

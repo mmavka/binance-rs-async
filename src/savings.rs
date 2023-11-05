@@ -93,7 +93,7 @@ impl Savings {
     /// Get all coins available for deposit and withdrawal
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, savings::*, config::*};
+    /// use binance_rs_async::{api::*, savings::*, config::*};
     /// let savings: Savings = Binance::new_with_env(&Config::testnet());
     /// let coins = tokio_test::block_on(savings.get_all_coins());
     /// assert!(coins.is_ok(), "{:?}", coins)
@@ -108,7 +108,7 @@ impl Savings {
     /// Fetch details of assets supported on Binance.
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, savings::*, config::*};
+    /// use binance_rs_async::{api::*, savings::*, config::*};
     /// let savings: Savings = Binance::new_with_env(&Config::testnet());
     /// let coins = tokio_test::block_on(savings.asset_detail(Some("CTR")));
     /// assert!(coins.is_ok(), "{:?}", coins)
@@ -132,7 +132,7 @@ impl Savings {
     /// If no network is specified, the address for the default network is returned.
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, savings::*, config::*};
+    /// use binance_rs_async::{api::*, savings::*, config::*};
     /// let savings: Savings = Binance::new_with_env(&Config::testnet());
     /// let coins = tokio_test::block_on(savings.deposit_address("CTR", None));
     /// assert!(coins.is_ok(), "{:?}", coins)

@@ -140,7 +140,7 @@ impl Account {
     /// General account information
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, account::*, config::*};
+    /// use binance_rs_async::{api::*, account::*, config::*};
     /// let account: Account = Binance::new_with_env(&Config::testnet());
     /// let account = tokio_test::block_on(account.get_account());
     /// assert!(account.is_ok(), "{:?}", account);
@@ -154,7 +154,7 @@ impl Account {
     /// Account balance for a single asset
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, account::*, config::*};
+    /// use binance_rs_async::{api::*, account::*, config::*};
     /// let account: Account = Binance::new_with_env(&Config::testnet());
     /// let balance = tokio_test::block_on(account.get_balance("BTC"));
     /// assert!(balance.is_ok(), "{:?}", balance);
@@ -180,7 +180,7 @@ impl Account {
     /// All currently open orders for a single symbol
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, account::*, config::*};
+    /// use binance_rs_async::{api::*, account::*, config::*};
     /// let account: Account = Binance::new_with_env(&Config::testnet());
     /// let orders = tokio_test::block_on(account.get_open_orders("BTCUSDT"));
     /// assert!(orders.is_ok(), "{:?}", orders);
@@ -197,7 +197,7 @@ impl Account {
     /// All orders for the account
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, account::*, config::*};
+    /// use binance_rs_async::{api::*, account::*, config::*};
     /// let account: Account = Binance::new_with_env(&Config::testnet());
     /// let query = OrdersQuery {
     ///     symbol: "BTCUSDT".to_string(),
@@ -219,7 +219,7 @@ impl Account {
     /// All currently open orders for the account
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, account::*, config::*};
+    /// use binance_rs_async::{api::*, account::*, config::*};
     /// let account: Account = Binance::new_with_env(&Config::testnet());
     /// let orders = tokio_test::block_on(account.get_all_open_orders());
     /// assert!(orders.is_ok(), "{:?}", orders);
@@ -232,7 +232,7 @@ impl Account {
     /// Cancels all currently open orders of specified symbol for the account
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, account::*, config::*};
+    /// use binance_rs_async::{api::*, account::*, config::*};
     /// let account: Account = Binance::new_with_env(&Config::testnet());
     /// let canceled_orders = tokio_test::block_on(account.cancel_all_open_orders("ETHBTC"));
     /// assert!(canceled_orders.is_ok(), "{:?}", canceled_orders);
@@ -249,7 +249,7 @@ impl Account {
     /// Check an order's status
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, account::*, config::*};
+    /// use binance_rs_async::{api::*, account::*, config::*};
     /// let account: Account = Binance::new_with_env(&Config::testnet());
     /// let query = OrderStatusRequest {
     ///     symbol: "BTCUSDT".to_string(),
@@ -271,7 +271,7 @@ impl Account {
     /// This order is sandboxed: it is validated, but not sent to the matching engine.
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, account::*, config::*};
+    /// use binance_rs_async::{api::*, account::*, config::*};
     /// let account: Account = Binance::new_with_env(&Config::testnet());
     /// let query = OrderStatusRequest {
     ///     symbol: "BTCUSDT".to_string(),
@@ -293,7 +293,7 @@ impl Account {
     /// This methods validates the order request before sending, making sure it complies with Binance rules
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, account::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, account::*, config::*, rest_model::*};
     /// let account: Account = Binance::new_with_env(&Config::testnet());
     /// let limit_buy = OrderRequest {
     ///         symbol: "BTCUSDT".to_string(),
@@ -320,7 +320,7 @@ impl Account {
     /// This order is sandboxed: it is validated, but not sent to the matching engine.
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, account::*, config::*, rest_model::*};
+    /// use binance_rs_async::{api::*, account::*, config::*, rest_model::*};
     /// let account: Account = Binance::new_with_env(&Config::testnet());
     /// let limit_buy = OrderRequest {
     ///         symbol: "BTCUSDT".to_string(),
@@ -344,7 +344,7 @@ impl Account {
     /// Place a cancellation order
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, account::*, config::*};
+    /// use binance_rs_async::{api::*, account::*, config::*};
     /// let account: Account = Binance::new_with_env(&Config::testnet());
     /// let query = OrderCancellation {
     ///     symbol: "BTCUSDT".to_string(),
@@ -374,7 +374,7 @@ impl Account {
     /// This order is sandboxed: it is validated, but not sent to the matching engine.
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, account::*, config::*};
+    /// use binance_rs_async::{api::*, account::*, config::*};
     /// let account: Account = Binance::new_with_env(&Config::testnet());
     /// let query = OrderCancellation {
     ///     symbol: "BTCUSDT".to_string(),
@@ -395,7 +395,7 @@ impl Account {
     /// Trade history
     /// # Examples
     /// ```rust,no_run
-    /// use binance::{api::*, account::*, config::*};
+    /// use binance_rs_async::{api::*, account::*, config::*};
     /// let account: Account = Binance::new_with_env(&Config::testnet());
     /// let trade_history = tokio_test::block_on(account.trade_history("BTCUSDT"));
     /// assert!(trade_history.is_ok(), "{:?}", trade_history);
